@@ -89,6 +89,16 @@ public class Repositorio extends Application {
 			Button paciencia = new Button("Paciencia ");
 			vbox.getChildren().add(paciencia);
 
+//segundo cambio a realizar añado un boton de cerrar
+
+
+			Button cerrar1 = new Button("Salir! ");
+			vbox.getChildren().add(cerrar1);
+			//Ponemos un evento al pulsar sobre cerrar para que cierre la aplicacion
+			cerrar1.setOnAction(valueExit -> {
+				preguntas.close();
+			});
+
 
 			// ponemos una separación, para que los elementos no esten pegados
 			vbox.setSpacing(10.0);
