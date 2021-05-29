@@ -2,10 +2,14 @@ package Repositorios;
 
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -27,6 +31,31 @@ public class Repositorio extends Application {
 		Button pulsa = new Button("¿Que dios eres? ");
 		grid.add(pulsa,0,0);
 		grid.setAlignment(Pos.CENTER);
+
+
+		MenuBar barraMenu = new MenuBar();
+
+
+//Un cambio para el commit he decidico un menubar que perimta salir
+
+		//Creamos el menu
+		Menu ayuda = new Menu("Ayuda");
+		MenuItem cerrar = new MenuItem("Cerrar");
+
+		ayuda.getItems().add(cerrar);
+
+		barraMenu.getMenus().add(ayuda);
+
+		grid.setMargin(barraMenu, new Insets(-350,0,0,0));
+
+		grid.getChildren().add(barraMenu);
+
+
+
+		//Ponemos un evento al pulsar sobre cerrar para que cierre la aplicacion
+		cerrar.setOnAction(value -> {
+			stage.close();
+		});
 
 // ************************si pulsamos el boton saldrá un segundo panel con las preguntas
 		pulsa.setOnMouseClicked(value -> {
